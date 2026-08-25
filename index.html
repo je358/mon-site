@@ -34,6 +34,20 @@ Des produits sélectionnés pour leur haute qualité.
 Des prix accessibles pour tous les budgets.
 Une satisfaction garantie à chaque achat.
 🚀 Passez votre commande dès maintenant !</p>
+ <!-- Barre de recherche -->
+    <div class="barre-recherche-container">
+        <input 
+            type="text" 
+            id="barre-recherche" 
+            placeholder="Rechercher un article..." 
+            oninput="filtrerProduits()"
+        >
+    
+    <!-- Message si aucun produit ne correspond -->
+    <p id="message-aucun-resultat" style="display: none; text-align: center; margin-top: 2rem; font-weight: bold; color: #777;">
+        Aucun article ne correspond à votre recherche.
+    </p>
+
         <h2>Nos Articles</h2>
 
         <div class="grille-produits">
@@ -42,14 +56,16 @@ Une satisfaction garantie à chaque achat.
                 <img src="i1.jpg" alt="Article 1">
                 <h3>montre connecté</h3>
                 <p class="prix">7500FCFA</p>
-                <a href="https://wa.me/22958789161 text=Bonjour,%20je%20souhaite%20commander%20l'Article%201" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+               <button class="btn-ajouter" onclick="ajouterAuPanier('Article 1', 7500, 'i1.jpg')">Ajouter au panier</button>
+
             </div>
 
             <div class="carte-produit">
                 <img src="i2.jpg" alt="Article 2">
                 <h3>sac au dos</h3>
                 <p class="prix">3000FCFA</p>
-                <a href="https://wa.me/22958789161 text=Bonjour,%20je%20souhaite%20commander%20l'Article%202" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 2',3000 , 'i2.jpg')">Ajouter au panier</button>
+
             </div>
 
         
@@ -57,7 +73,8 @@ Une satisfaction garantie à chaque achat.
                 <img src="i3.jpg" alt="Article 3">
                 <h3>power bank 30000mah</h3>
                 <p class="prix">5500 FCFA</p>
-                <a href="https://wa.me/22958789161 text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+                <button class="btn-ajouter" onclick="ajouterAuPanier('Article 3', 5500, 'i3.jpg')">Ajouter au panier</button>
+
             </div>
 
           
@@ -65,8 +82,9 @@ Une satisfaction garantie à chaque achat.
                 <img src="i4.jpg" alt="Article 4">
                 <h3>ecouteur sans file</h3>
                 <p class="prix">3000 FCFA</p>
-                <a href="https://wa.me/2290158789161
-text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+ <button class="btn-ajouter" onclick="ajouterAuPanier('Article 4', 3000, 'i4.jpg')">Ajouter au panier</button>
+
+                
             </div>
 
           
@@ -74,8 +92,8 @@ text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander"
                 <img src="i5.jpg" alt="Article 5">
                 <h3>micro cravate</h3>
                 <p class="prix">5500 FCFA</p>
-                <a href="https://wa.me/2290158789161
-text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 5', 5500, 'i5.jpg')">Ajouter au panier</button>
+
             </div>
 
         
@@ -83,15 +101,17 @@ text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander"
                 <img src="i6.jpg" alt="Article 6">
                 <h3>casque soyto t-12</h3>
                 <p class="prix">6500FCFA</p>
-                <a href="https://wa.me/2290158789161
-text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 6', 6500, 'i6.jpg')">Ajouter au panier</button>
+
+
         
             <div class="carte-produit">
                 <img src="i7.jpg" alt="Article 7">
                 <h3>sonnette sans file</h3>
                 <p class="prix">4000FCFA</p>
-                <a href="https://wa.me/2290158789161
-text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 7', 4000, 'i7.jpg')">Ajouter au panier</button>
+
+
             </div>
 
           
@@ -99,8 +119,8 @@ text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander"
                 <img src="i8.jpg" alt="Article 8">
                 <h3>gourde thermos</h3>
                 <p class="prix">4500 FCFA</p>
-                <a href="https://wa.me/2290158789161
-text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 8', 4500, 'i8.png')">Ajouter au panier</button>
+
             </div>
 
         
@@ -108,15 +128,15 @@ text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander"
                 <img src="i9.jpg" alt="Article 9">
                 <h3>mini climatiseur</h3>
                 <p class="prix">6000FCFA</p>
-                <a href="https://wa.me/2290158789161
-text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 9', 6000, 'i9.jpg')">Ajouter au panier</button>
+
             </div>
  <div class="carte-produit">
               <img src="Bobo.png" alt="Autre article">
                 <h3>autre articles</h3>
                 <p class="prix"></p>
-                <a href="https://wa.me/2290158789161
-text=Bonjour,%20je%20souhaite%20commander%20l'Article%203" class="btn-commander" target="_blank">Commander sur WhatsApp</a>
+                 <button class="btn-ajouter" onclick="ajouterAuPanier('autre article',, 'Bobo.png')">Ajouter au panier</button>
+
             </div>
         </div>
     </section>

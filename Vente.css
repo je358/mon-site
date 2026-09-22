@@ -237,7 +237,7 @@ nav a:hover {
     padding-bottom: 20px;
 
     width: 100%;
-    height: 230px;
+    height: 230%;
     object-fit: cover;
 
 
@@ -258,12 +258,12 @@ nav a:hover {
 
 /* IMAGE PRODUIT */
 
-.carte-produit img {
+    img {
     width: 100%;
-    height: 230px;
+    height: 150%;
     object-fit: cover;
 
-    display:block;
+    display:grid;
 
     background: #f1f1f1;
 }

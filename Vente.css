@@ -73,7 +73,7 @@ header nav a {
     text-align: center;
     padding: 1rem;
     display: flex;
-    flex-direction:;
+    flex-direction:column;
     justify-content: space-between;
 }
 

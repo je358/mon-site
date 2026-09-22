@@ -215,7 +215,7 @@ nav a:hover {
 ============================== */
 
 .grille-produits {
-    display: grid;
+    display: flex;
 
     grid-template-columns: repeat(3, 1fr);
 
@@ -232,7 +232,7 @@ nav a:hover {
 
     border-radius: 15px;
 
-    
+        overflow: hidden;
 
     padding-bottom: 20px;
 

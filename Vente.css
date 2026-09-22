@@ -73,8 +73,10 @@ header nav a {
     text-align: center;
     padding: 1rem;
     display: flex;
-    flex-direction:column;
+    flex-direction:columns;
     justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+
 }
 
 .carte-produit img {

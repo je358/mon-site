@@ -215,7 +215,7 @@ nav a:hover {
 ============================== */
 
 .grille-produits {
-    display: flex;
+    display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
@@ -263,7 +263,7 @@ nav a:hover {
     height: 230px;
     object-fit: cover;
 
-    display:flex;
+    display:block;
 
     background: #f1f1f1;
 }

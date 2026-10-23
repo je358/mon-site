@@ -23,18 +23,21 @@
         <p>Découvrez nos articles exclusifs au meilleur prix.</p>
     </section>
     <div class="barre-recherche-container">
-        <input 
-            type="text" 
-            id="barre-recherche" 
-            placeholder="Rechercher un article..." 
-            oninput="filtrerProduits()"
-        >
-    <p id="message-aucun-resultat" style="display: none; text-align: center; margin-top: 2rem; font-weight: bold; color: #777;">
-        Aucun article ne correspond à votre recherche.
-    </p>
+    <input
+        type="text"
+        id="barre-recherche"
+        placeholder="Rechercher un article..."
+        oninput="filtrerProduits()"
+    >
+</div>
+
+<!-- Message si aucun article ne correspond -->
+<p id="message-aucun-resultat" style="display: none;">
+    Aucun article ne correspond à votre recherche.
+</p>
  
 <section class="presentation">
-<p>Vous cherchez des accessoires tendances, utiles et surtout de qualité ? Ne cherchez plus, AHD & JP shop a sélectionné le meilleur pour vous ! 🛍️
+<p>Vous cherchez des accessoires tendances, utiles et surtout de qualité ? Ne cherchez plus, JP shop a sélectionné le meilleur pour vous ! 🛍️
 Découvrez notre large gamme de produits indispensables :
 🎧 Audio & Tech : Écouteurs et AirPods pour un son immersif.
 ⌚ Style : Montres élégantes pour sublimer votre look.
@@ -154,17 +157,33 @@ Une satisfaction garantie à chaque achat.
                 <!-- Les articles du panier s'afficheront ici -->
             </div>
 
+            
             <div class="pied-panier">
-                <h3>Total : <span id="total-panier">0</span> FCFA</h3>
-                <button id="btn-valider" class="btn-commander" onclick="validerCommande()">Commander sur WhatsApp <a href src="229015878916"></a></button>
+                <h3>
+                    Total : <span id="total-panier">0</span> FCFA
+                </h3>
+
+                <button
+                    id="btn-valider"
+                    class="btn-commander"
+                    onclick="validerCommande()"
+                >
+                    Commander sur WhatsApp
+                </button>
             </div>
 
+        </div>
+    </div>
+
+    <!-- Pied de page -->
     <footer id="contact">
-<a href="#">#catalogue</a>
-<a href="#">#contact</a>
-<p>Ahouandjijp</p>
-        <p>©2026 JP Shop. Tous droits réservés.</p>
+        <a href="#produits">Catalogue</a>
+        <a href="#contact">Contact</a>
+        <p>Ahouandjijp</p>
+        <p>© 2026 JP Shop. Tous droits réservés.</p>
     </footer>
-<script src="Script.js"></script>
+
+    <script src="Script.js"></script>
 </body>
 </html>
+

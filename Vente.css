@@ -296,14 +296,4 @@ header nav a {
     }
 }
 
-.hero {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: black;
-    background-image: url("file_00000000906071f4a48446e1243c7a7a.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-}
 

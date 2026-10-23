@@ -10,12 +10,10 @@
     border-radius: 20px;
 }
 .hero {
-    text-align: center;
+    
     padding: 3rem 1rem;
     background-color: black;
     color: #fff;
-  background-image:url="file_00000000906071f4a48446e1243c7a7a.png";
-}
 header {
     display: flex;
     justify-content: space-between;

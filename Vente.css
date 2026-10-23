@@ -145,9 +145,45 @@ header nav a {
     cursor: pointer;
 }
 .grille-produits {
+    /* Conteneur des articles */
+#produits {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Carte de chaque article */
+.produit {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image des articles */
+.produit img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+/* Sur téléphone : une seule colonne */
+@media (max-width: 600px) {
+    #produits {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sur tablette : deux colonnes */
+@media (min-width: 601px) and (max-width: 900px) {
+    #produits {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .carte-produit {

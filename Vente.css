@@ -2,239 +2,105 @@
 
 
 
-
-/* Style Icône Panier */
-.panier-icone {
-    position: relative;
-    cursor: pointer;
-    font-size: 1.5rem;
-    background: #ff6b6b;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-}
-.hero {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: black;
-    color: #fff;
-  background-image:url="file_00000000906071f4a48446e1243c7a7a.png";
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #111;
-    color: #fff;
-    padding: 1rem 2rem;
-}
-
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ff6b6b;
-}
-
-header nav a {
-    color: #fff;
-    margin-left: 1.5rem;
-}
-
-#compteur-panier {
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-/* Bouton Ajouter */
-.btn-ajouter {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 0.7rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn-ajouter:hover {
-    background-color: #ee5253;
-}
-
-/* Modal Panier */
-.volet-panier {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    z-index: 1000;
-    justify-content: flex-end;
-}
-
-.contenu-panier {
-    background-color: white;
-    width: 100%;
-    max-width: 400px;
-    height: 100%;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.entete-panier {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 1rem;
-}
-
-.fermer {
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.liste-panier {
-    flex: 1;
-    overflow-y: auto;
-    margin: 1rem 0;
-}
-
-.element-panier {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.element-panier div {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.btn-retirer {
-    background: #ff4757;
-    color: white;
-    border: none;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.pied-panier {
-    border-top: 1px solid #ddd;
-    padding-top: 1rem;
-}
-
-.btn-commander {
-    width: 100%;
-    margin-top: 1rem;
-    background-color: #25d366;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-}
+/* Grille des produits */
 .grille-produits {
-    /* Conteneur des articles */
-#produits {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
-    padding: 20px;
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 15px;
+    box-sizing: border-box;
+    align-items: stretch;
 }
 
-/* Carte de chaque article */
-.produit {
+/* Cartes des produits */
+.carte-produit {
+    min-width: 0;
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Image des articles */
-.produit img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-}
-
-/* Sur téléphone : une seule colonne */
-@media (max-width: 600px) {
-    #produits {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Sur tablette : deux colonnes */
-@media (min-width: 601px) and (max-width: 900px) {
-    #produits {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.carte-produit {
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 1rem;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+/* Images de même taille */
 .carte-produit img {
+    display: block;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 180px;
+    object-fit: contain;
     border-radius: 4px;
 }
 
+/* Titres des articles */
 .carte-produit h3 {
-    margin: 1rem 0 0.5rem;
+    font-size: 1rem;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
 }
 
+/* Prix */
 .carte-produit .prix {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #25d366;
-    margin-bottom: 1rem;
-}
-/* Style Barre de Recherche */
-.barre-recherche-container {
-    max-width: 500px;
-    margin: 0 auto 2rem auto;
-    padding: 0 1rem;
+    margin: 10px 0;
 }
 
-#barre-recherche {
+/* Boutons */
+.carte-produit .btn-ajouter {
     width: 100%;
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 25px;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-top: auto;
 }
 
-#barre-recherche:focus {
-    border-color: #ff6b6b;
-    box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+/* Tablette : 2 colonnes */
+@media (min-width: 601px) and (max-width: 900px) {
+    .grille-produits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .carte-produit img {
+        height: 160px;
+    }
 }
 
-  
+/* Téléphone : 2 colonnes */
+@media (max-width: 600px) {
+    .grille-produits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .carte-produit {
+        padding: 8px;
+    }
+
+    .carte-produit img {
+        height: 120px;
+    }
+
+    .carte-produit h3 {
+        font-size: 0.9rem;
+    }
+
+    .carte-produit .prix {
+        font-size: 0.95rem;
+    }
+
+    .carte-produit .btn-ajouter {
+        padding: 10px 4px;
+        font-size: 0.75rem;
+    }
+}
+
+

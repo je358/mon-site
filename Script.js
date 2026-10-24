@@ -1,109 +1,167 @@
-// Remplacez par votre numéro de téléphone WhatsApp (avec l'indicatif sans le +)
-const NUMERO_WHATSAPP = "2290158789161"; 
+/* JP Shop — recherche et panier */
+(() => {
+  "use strict";
 
-let panier = [];
+  const cart = new Map();
+  const cartOverlay = document.getElementById("volet-panier");
+  const openCartButton = document.getElementById("ouvrir-panier");
+  const closeCartButton = document.getElementById("fermer-panier");
+  const cartList = document.getElementById("liste-panier");
+  const cartCount = document.getElementById("compteur-panier");
+  const cartTotal = document.getElementById("total-panier");
+  const checkoutButton = document.getElementById("btn-valider");
+  const searchInput = document.getElementById("barre-recherche");
+  const noResults = document.getElementById("message-aucun-resultat");
+  const productCards = [...document.querySelectorAll(".carte-produit")];
 
-// Gestion de l'affichage du volet panier
-const modalPanier = document.getElementById('volet-panier');
-document.getElementById('ouvrir-panier').onclick = () => modalPanier.style.display = 'flex';
-document.getElementById('fermer-panier').onclick = () => modalPanier.style.display = 'none';
+  // Remplace ce numéro par ton numéro WhatsApp au format international sans +.
+  const WHATSAPP_NUMBER = "2290158789161";
 
-// Ajouter un article au panier
-function ajouterAuPanier(nom, prix, image) {
-    const articleExistant = panier.find(item => item.nom === nom);
+  const formatPrice = value => new Intl.NumberFormat("fr-FR").format(value) + " FCFA";
 
-    if (articleExistant) {
-        articleExistant.quantite++;
-    } else {
-        panier.push({ nom, prix, quantite: 1 });
+  function openCart() {
+    cartOverlay.classList.add("open");
+    cartOverlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeCart() {
+    cartOverlay.classList.remove("open");
+    cartOverlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  openCartButton.addEventListener("click", openCart);
+  closeCartButton.addEventListener("click", closeCart);
+  cartOverlay.addEventListener("click", event => {
+    if (event.target === cartOverlay) closeCart();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeCart();
+  });
+
+  document.querySelectorAll(".btn-ajouter").forEach(button => {
+    button.addEventListener("click", () => {
+      const id = button.dataset.id;
+      const card = button.closest(".carte-produit");
+      const product = {
+        id,
+        name: button.dataset.name,
+        price: Number(button.dataset.price || 0),
+        image: card.querySelector("img").src,
+        quantity: 1
+      };
+      if (cart.has(id)) cart.get(id).quantity += 1;
+      else cart.set(id, product);
+      renderCart();
+      const oldText = button.textContent;
+      button.textContent = "Ajouté ✓";
+      window.setTimeout(() => { button.textContent = oldText; }, 900);
+    });
+  });
+
+  function changeQuantity(id, amount) {
+    const item = cart.get(id);
+    if (!item) return;
+    item.quantity += amount;
+    if (item.quantity <= 0) cart.delete(id);
+    renderCart();
+  }
+
+  function renderCart() {
+    const items = [...cart.values()];
+    const count = items.reduce((sum, item) => sum + item.quantity, 0);
+    const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    cartCount.textContent = count;
+    cartTotal.textContent = new Intl.NumberFormat("fr-FR").format(total);
+
+    if (!items.length) {
+      cartList.innerHTML = '<p class="cart-empty">Votre panier est vide.</p>';
+      return;
     }
 
-    mettreAJourPanier();
-}
+    cartList.replaceChildren();
+    items.forEach(item => {
+      const row = document.createElement("div");
+      row.className = "cart-item";
 
-// Supprimer ou réduire la quantité d'un article
-function retirerDuPanier(nom) {
-    panier = panier.filter(item => item.nom !== nom);
-    mettreAJourPanier();
-}
+      const image = document.createElement("img");
+      image.src = item.image;
+      image.alt = item.name;
 
-// Mettre à jour le DOM
-function mettreAJourPanier() {
-    const conteneurListe = document.getElementById('liste-panier');
-    conteneurListe.innerHTML = '';
+      const details = document.createElement("div");
+      const name = document.createElement("div");
+      name.className = "cart-item-name";
+      name.textContent = item.name;
+      const price = document.createElement("div");
+      price.className = "cart-item-price";
+      price.textContent = formatPrice(item.price * item.quantity);
 
-    let total = 0;
-    let totalArticles = 0;
+      const controls = document.createElement("div");
+      controls.className = "quantity-controls";
+      const minus = document.createElement("button");
+      minus.type = "button";
+      minus.textContent = "−";
+      minus.setAttribute("aria-label", "Retirer une unité de " + item.name);
+      minus.addEventListener("click", () => changeQuantity(item.id, -1));
+      const qty = document.createElement("span");
+      qty.textContent = item.quantity;
+      const plus = document.createElement("button");
+      plus.type = "button";
+      plus.textContent = "+";
+      plus.setAttribute("aria-label", "Ajouter une unité de " + item.name);
+      plus.addEventListener("click", () => changeQuantity(item.id, 1));
+      controls.append(minus, qty, plus);
+      details.append(name, price, controls);
 
-    panier.forEach(item => {
-        total += item.prix * item.quantite;
-        totalArticles += item.quantite;
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "remove-item";
+      remove.textContent = "▤";
+      remove.setAttribute("aria-label", "Supprimer " + item.name);
+      remove.addEventListener("click", () => {
+        cart.delete(item.id);
+        renderCart();
+      });
 
-        const div = document.createElement('div');
-        div.classList.add('element-panier');
-        div.innerHTML = `
-            <div>
-                <strong>${item.nom}</strong>
-                <span>x${item.quantite}</span>
-            </div>
-            <div>
-                <span>${item.prix * item.quantite} FCFA</span>
-                <button class="btn-retirer" onclick="retirerDuPanier('${item.nom}')">X</button>
-            </div>
-        `;
-        conteneurListe.appendChild(div);
+      row.append(image, details, remove);
+      cartList.append(row);
     });
+  }
 
-    document.getElementById('total-panier').innerText = total;
-    document.getElementById('compteur-panier').innerText = totalArticles;
-}
+  function filterProducts() {
+    const query = searchInput.value.trim().toLocaleLowerCase("fr");
+    let visible = 0;
+    productCards.forEach(card => {
+      const name = (card.dataset.name || card.querySelector("h3")?.textContent || "").toLocaleLowerCase("fr");
+      const show = name.includes(query);
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+    noResults.hidden = visible !== 0;
+  }
+  searchInput.addEventListener("input", filterProducts);
 
-// Envoi de la commande récapitulative sur WhatsApp
-function validerCommande() {
-    if (panier.length === 0) {
-        alert("Votre panier est vide !");
-        return;
+  checkoutButton.addEventListener("click", () => {
+    const items = [...cart.values()];
+    if (!items.length) {
+      alert("Votre panier est vide. Ajoutez d'abord un article.");
+      return;
     }
+    const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const lines = items.map(item =>
+      `- ${item.name} x${item.quantity} : ${formatPrice(item.price * item.quantity)}`
+    );
+    const message = [
+      "Bonjour JP Shop ! Je souhaite commander :",
+      "",
+      ...lines,
+      "",
+      `Total : ${formatPrice(total)}`,
+      "Merci de me confirmer la disponibilité et la livraison."
+    ].join("\n");
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
 
-    let message = "Bonjour JP Shop, je souhaite passer la commande suivante :\n\n";
-    let total = 0;
-
-    panier.forEach(item => {
-        const sousTotal = item.prix * item.quantite;
-        total += sousTotal;
-        message += `- ${item.nom} (x${item.quantite}) : ${sousTotal} FCFA\n`;
-    });
-
-    message += `\n*Total Général : ${total} FCFA*`;
-
-    const urlWhatsApp = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(message)}`;
-    window.open(urlWhatsApp, '_blank');
-}
-// Fonction de filtrage dynamique des produits
-function filtrerProduits() {
-    const saisie = document.getElementById('barre-recherche').value.toLowerCase().trim();
-    const cartesProduits = document.querySelectorAll('.carte-produit');
-    const messageAucunResultat = document.getElementById('message-aucun-resultat');
-    let compteurVisibles = 0;
-
-    cartesProduits.forEach(carte => {
-        // Récupère le nom de l'article dans le h3
-        const nomProduit = carte.querySelector('h3').innerText.toLowerCase();
-
-        // Vérifie si le nom contient la chaîne saisie
-        if (nomProduit.includes(saisie)) {
-            carte.style.display = 'flex';
-            compteurVisibles++;
-        } else {
-            carte.style.display = 'none';
-        }
-    });
-
-    // Affiche un message si aucun résultat n'est trouvé
-    if (compteurVisibles === 0) {
-        messageAucunResultat.style.display = 'block';
-    } else {
-        messageAucunResultat.style.display = 'none';
-    }
-                           }
-                  
+  renderCart();
+})();

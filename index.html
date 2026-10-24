@@ -1,189 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP Shop - Votre Boutique en Ligne</title>
-    <link rel="stylesheet" href="Vente.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JP Shop - Accessoires électroniques et articles utiles à prix accessibles au Bénin.">
+  <title>JP Shop - Votre boutique en ligne</title>
+  <link rel="stylesheet" href="Vente.css">
 </head>
 <body>
-    <header>
-        <div class="logo">JP Shop</div>
-        <nav>
-            <a href="#produits">Produits</a>
-            <a href="#contact">Contact</a>
-<div class="panier-icone" id="ouvrir-panier">
-                🛒 <span id="compteur-panier">0</span>
-</div> 
+  <header class="site-header">
+    <a class="logo" href="#">JP Shop</a>
+    <nav class="navigation" aria-label="Navigation principale">
+      <a href="#produits">Produits</a>
+      <a href="#contact">Contact</a>
+      <button class="cart-trigger" id="ouvrir-panier" type="button" aria-label="Ouvrir le panier">
+        <span aria-hidden="true">🛒</span> <span id="compteur-panier">0</span>
+      </button>
+    </nav>
+  </header>
 
-        </nav>
-    </header>
-    <section class="hero">
-        <h1>Bienvenue chez JP Shop</h1>
-        <p>Découvrez nos articles exclusifs au meilleur prix.</p>
-    </section>
-    <div class="barre-recherche-container">
-    <input
-        type="text"
-        id="barre-recherche"
-        placeholder="Rechercher un article..."
-        oninput="filtrerProduits()"
-    >
-</div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Bienvenue chez JP Shop</h1>
+      <p>Découvrez nos articles exclusifs au meilleur prix.</p>
+      <span class="hero-line"></span>
+    </div>
+  </section>
 
-<!-- Message si aucun article ne correspond -->
-<p id="message-aucun-resultat" style="display: none;">
-    Aucun article ne correspond à votre recherche.
-</p>
- 
-<section class="presentation">
-<p>Vous cherchez des accessoires tendances, utiles et surtout de qualité ? Ne cherchez plus, JP shop a sélectionné le meilleur pour vous ! 🛍️
-Découvrez notre large gamme de produits indispensables :
-🎧 Audio & Tech : Écouteurs et AirPods pour un son immersif.
-⌚ Style : Montres élégantes pour sublimer votre look.
-🏠 Confort & Bien-être : Ventilateurs, diffuseurs de senteur et humidificateurs.
-🌸 Fraîcheur : Parfums de qualité pour vous démarquer.
-✅ Pourquoi nous choisir ?
-Des produits sélectionnés pour leur haute qualité.
-Des prix accessibles pour tous les budgets.
-Une satisfaction garantie à chaque achat.
-🚀 Passez votre commande dès maintenant !</p>
-</section>
-
-
-
-<section id="produits" class="catalogue">
-    <h2>Nos Articles</h2>
-
-    <div class="grille-produits"
-
-            
-            <div class="carte-produit">
-                <img src="i1.jpg" alt="Article 1">
-                <h3>montre connecté</h3>
-                <p class="prix">7500FCFA</p>
-               <button class="btn-ajouter" onclick="ajouterAuPanier('Article 1', 7500, 'i1.jpg')">Ajouter au panier</button>
-
-            </div>
-
-            <div class="carte-produit">
-                <img src="i2.jpg" alt="Article 2">
-                <h3>sac au dos</h3>
-                <p class="prix">3000FCFA</p>
-                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 2',3000 , 'i2.jpg')">Ajouter au panier</button>
-
-            </div>
-
-        
-            <div class="carte-produit">
-                <img src="i3.jpg" alt="Article 3">
-                <h3>power bank 30000mah</h3>
-                <p class="prix">5500 FCFA</p>
-                <button class="btn-ajouter" onclick="ajouterAuPanier('Article 3', 5500, 'i3.jpg')">Ajouter au panier</button>
-
-            </div>
-
-          
-            <div class="carte-produit">
-                <img src="i4.jpg" alt="Article 4">
-                <h3>ecouteur sans file</h3>
-                <p class="prix">3000 FCFA</p>
- <button class="btn-ajouter" onclick="ajouterAuPanier('Article 4', 3000, 'i4.jpg')">Ajouter au panier</button>
-
-                
-            </div>
-
-          
-            <div class="carte-produit">
-                <img src="i5.jpg" alt="Article 5">
-                <h3>micro cravate</h3>
-                <p class="prix">5500 FCFA</p>
-                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 5', 5500, 'i5.jpg')">Ajouter au panier</button>
-
-            </div>
-
-        
-            <div class="carte-produit">
-                <img src="i6.jpg" alt="Article 6">
-                <h3>casque soyto t-12</h3>
-                <p class="prix">6500FCFA</p>
-                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 6', 6500, 'i6.jpg')">Ajouter au panier</button>
-        </div>
-
-        
-            <div class="carte-produit">
-                <img src="i7.jpg" alt="Article 7">
-                <h3>sonnette sans file</h3>
-                <p class="prix">4000FCFA</p>
-                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 7', 4000, 'i7.jpg')">Ajouter au panier</button>
-
-
-            </div>
-
-          
-            <div class="carte-produit">
-                <img src="i8.jpg" alt="Article 8">
-                <h3>gourde thermos</h3>
-                <p class="prix">4500 FCFA</p>
-                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 8', 4500, 'i8.png')">Ajouter au panier</button>
-
-            </div>
-
-        
-            <div class="carte-produit">
-                <img src="i9.jpg" alt="Article 9">
-                <h3>mini climatiseur</h3>
-                <p class="prix">6000FCFA</p>
-                 <button class="btn-ajouter" onclick="ajouterAuPanier('Article 9', 6000, 'i9.jpg')">Ajouter au panier</button>
-
-            </div>
- <div class="carte-produit">
-              <img src="Bobo.png" alt="Autre article">
-                <h3>autre articles</h3>
-                <p class="prix"></p>
-                 <button class="btn-ajouter" onclick="ajouterAuPanier('autre article',000, 'Bobo.png')">Ajouter au panier</button>
-
-            </div>
-        </div>
-    </section>
-<div id="volet-panier" class="volet-panier">
-        <div class="contenu-panier">
-            <div class="entete-panier">
-                <h2>Votre Panier</h2>
-                <span id="fermer-panier" class="fermer">&times;</span>
-            </div>
-            
-            <div id="liste-panier" class="liste-panier">
-                <!-- Les articles du panier s'afficheront ici -->
-            </div>
-
-            
-            <div class="pied-panier">
-                <h3>
-                    Total : <span id="total-panier">0</span> FCFA
-                </h3>
-
-                <button
-                    id="btn-valider"
-                    class="btn-commander"
-                    onclick="validerCommande()"
-                >
-                    Commander sur WhatsApp
-                </button>
-            </div>
-
-        </div>
+  <main>
+    <div class="search-wrap">
+      <label class="sr-only" for="barre-recherche">Rechercher un article</label>
+      <span aria-hidden="true" class="search-icon">⌕</span>
+      <input id="barre-recherche" type="search" placeholder="Rechercher un article...">
     </div>
 
-    <!-- Pied de page -->
-    <footer id="contact">
-        <a href="#produits">Catalogue</a>
-        <a href="#contact">Contact</a>
-        <p>Ahouandjijp</p>
-        <p>© 2026 JP Shop. Tous droits réservés.</p>
-    </footer>
+    <section class="presentation">
+      <p>Vous cherchez des accessoires tendance, utiles et de qualité ? Ne cherchez plus, JP Shop a sélectionné le meilleur pour vous ! 🛍️ Découvrez notre gamme de produits indispensables : 🎧 Audio & Tech : écouteurs, AirPods et accessoires pour un son immersif. ⌚ Style : montres élégantes pour sublimer votre look. 🏠 Confort & bien-être : ventilateurs, gourdes et accessoires pratiques. ✅ Des produits sélectionnés avec soin, des prix accessibles et un service simple. Passez votre commande dès maintenant !</p>
+    </section>
 
-    <script src="Script.js"></script>
+    <section id="produits" class="catalogue">
+      <h2>Nos Articles</h2>
+      <div id="message-aucun-resultat" class="empty-message" hidden>Aucun article ne correspond à votre recherche.</div>
+      <div class="grille-produits" id="grille-produits">
+        <article class="carte-produit" data-name="montre connectée">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85" alt="Montre connectée" loading="lazy">
+          <h3>montre connectée</h3><p class="prix">7 500 FCFA</p>
+          <button class="btn-ajouter" data-id="1" data-name="montre connectée" data-price="7500" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="sac au dos">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=85" alt="Sac à dos" loading="lazy">
+          <h3>sac au dos</h3><p class="prix">3 000 FCFA</p>
+          <button class="btn-ajouter" data-id="2" data-name="sac au dos" data-price="3000" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="power bank 30000mah">
+          <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=700&q=85" alt="Batterie externe" loading="lazy">
+          <h3>power bank 30000mAh</h3><p class="prix">5 500 FCFA</p>
+          <button class="btn-ajouter" data-id="3" data-name="power bank 30000mAh" data-price="5500" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="écouteurs sans fil">
+          <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=700&q=85" alt="Écouteurs sans fil" loading="lazy">
+          <h3>écouteurs sans fil</h3><p class="prix">3 000 FCFA</p>
+          <button class="btn-ajouter" data-id="4" data-name="écouteurs sans fil" data-price="3000" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="micro cravate">
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=700&q=85" alt="Microphone" loading="lazy">
+          <h3>micro cravate</h3><p class="prix">5 500 FCFA</p>
+          <button class="btn-ajouter" data-id="5" data-name="micro cravate" data-price="5500" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="casque soyto t-12">
+          <img src="https://images.unsplash.com/photo-1505797149-43b0069ec26b?auto=format&fit=crop&w=700&q=85" alt="Casque audio" loading="lazy">
+          <h3>casque soyto t-12</h3><p class="prix">6 500 FCFA</p>
+          <button class="btn-ajouter" data-id="6" data-name="casque soyto t-12" data-price="6500" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="sonnette sans fil">
+          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=700&q=85" alt="Sonnette connectée" loading="lazy">
+          <h3>sonnette sans fil</h3><p class="prix">4 000 FCFA</p>
+          <button class="btn-ajouter" data-id="7" data-name="sonnette sans fil" data-price="4000" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="gourde thermos">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=85" alt="Gourde thermos" loading="lazy">
+          <h3>gourde thermos</h3><p class="prix">4 500 FCFA</p>
+          <button class="btn-ajouter" data-id="8" data-name="gourde thermos" data-price="4500" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="mini climatiseur">
+          <img src="https://images.unsplash.com/photo-1631545806609-2e3c7a1f1a2b?auto=format&fit=crop&w=700&q=85" alt="Mini climatiseur" loading="lazy">
+          <h3>mini climatiseur</h3><p class="prix">6 000 FCFA</p>
+          <button class="btn-ajouter" data-id="9" data-name="mini climatiseur" data-price="6000" type="button">Ajouter au panier</button>
+        </article>
+        <article class="carte-produit" data-name="autres articles">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85" alt="Autres articles" loading="lazy">
+          <h3>autres articles</h3><p class="prix">Prix sur demande</p>
+          <button class="btn-ajouter" data-id="10" data-name="autres articles" data-price="0" type="button">Demander le prix</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <a class="footer-logo" href="#">JP Shop</a>
+    <div class="footer-links"><a href="#produits">Catalogue</a><span>|</span><a href="#contact">Contact</a></div>
+    <p>© 2026 JP Shop. Tous droits réservés.</p>
+  </footer>
+
+  <div class="cart-backdrop" id="volet-panier" aria-hidden="true">
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <div class="cart-heading">
+        <h2 id="cart-title">Votre Panier</h2>
+        <button id="fermer-panier" class="close-cart" type="button" aria-label="Fermer le panier">×</button>
+      </div>
+      <div id="liste-panier" class="liste-panier"><p class="cart-empty">Votre panier est vide.</p></div>
+      <div class="cart-bottom">
+        <div class="cart-total"><strong>Total :</strong><strong><span id="total-panier">0</span> FCFA</strong></div>
+        <button id="btn-valider" class="btn-commander" type="button">☏ Commander sur WhatsApp</button>
+        <p class="cart-note">Vérifiez votre commande avant de l'envoyer.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="Script.js"></script>
 </body>
 </html>
-

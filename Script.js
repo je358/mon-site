@@ -128,18 +128,38 @@
     });
   }
 
-  function filterProducts() {
-    const query = searchInput.value.trim().toLocaleLowerCase("fr");
-    let visible = 0;
-    productCards.forEach(card => {
-      const name = (card.dataset.name || card.querySelector("h3")?.textContent || "").toLocaleLowerCase("fr");
-      const show = name.includes(query);
-      card.hidden = !show;
-      if (show) visible += 1;
-    });
-    noResults.hidden = visible !== 0;
+  
+  function normalizeText(text) {
+    return text
+      .toLocaleLowerCase("fr")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
   }
-  searchInput.addEventListener("input", filterProducts);
+
+  function filterProducts() {
+    if (!searchInput || !noResults) return;
+
+    const query = normalizeText(searchInput.value.trim());
+    let visible = 0;
+
+    productCards.forEach(card => {
+      const title = card.querySelector("h3");
+      const name = card.dataset.name || title?.textContent || "";
+      const matches = normalizeText(name).includes(query);
+
+      card.hidden = !matches;
+
+      if (matches) visible++;
+    });
+
+    noResults.hidden = visible > 0;
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", filterProducts);
+    filterProducts();
+  }
+
 
   checkoutButton.addEventListener("click", () => {
     const items = [...cart.values()];

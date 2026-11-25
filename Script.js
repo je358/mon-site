@@ -1,4 +1,4 @@
-/* JP Shop — recherche et panier */
+/* JP Shop — recherche et panier 
 (() => {
   "use strict";
 
@@ -184,4 +184,4 @@
   });
 
   renderCart();
-})();
+})();*/

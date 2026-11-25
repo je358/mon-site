@@ -181,3 +181,304 @@
   <script src="Script.js"></script>
 </body>
 </html>-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JP Shop : découvrez nos articles électroniques, maison, cuisine et accessoires.">
+    <title>JP Shop - Boutique en ligne</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="topbar">
+        Bienvenue chez JP Shop | Vente en gros et en détail
+    </div>
+
+    <header class="header">
+        <a href="#accueil" class="logo">
+            <span>JP</span> SHOP
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <nav id="navigation">
+            <a href="#accueil">Accueil</a>
+            <a href="#categories">Catégories</a>
+            <a href="#produits">Nos produits</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="panier-btn" id="ouvrir-panier">
+            🛒 Panier <span id="compteur-panier">0</span>
+        </button>
+    </header>
+
+    <main>
+
+        <!-- ACCUEIL -->
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <span class="sur-titre">BIENVENUE CHEZ JP SHOP</span>
+
+                <h1>
+                    Le meilleur du quotidien,
+                    <span>à portée de main.</span>
+                </h1>
+
+                <p>
+                    Découvrez une sélection d'articles pratiques,
+                    tendance et accessibles pour vous accompagner
+                    chaque jour.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#produits" class="btn-principal">
+                        Découvrir nos produits →
+                    </a>
+
+                    <a href="#categories" class="btn-secondaire">
+                        Nos catégories
+                    </a>
+                </div>
+
+                <p class="hero-note">
+                    ✦ Vente en gros et en détail
+                </p>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-decoration">
+                    <div class="produit-deco deco-1">⌚</div>
+                    <div class="produit-deco deco-2">🎧</div>
+                    <div class="deco-logo">JP<br>SHOP</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVANTAGES -->
+        <section class="avantages">
+            <div>
+                <span>✦</span>
+                <div>
+                    <h3>Articles sélectionnés</h3>
+                    <p>Des produits utiles au quotidien</p>
+                </div>
+            </div>
+
+            <div>
+                <span>◇</span>
+                <div>
+                    <h3>Prix accessibles</h3>
+                    <p>Des choix pour tous les budgets</p>
+                </div>
+            </div>
+
+            <div>
+                <span>✓</span>
+                <div>
+                    <h3>Commande facile</h3>
+                    <p>Contact direct sur WhatsApp</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATÉGORIES -->
+        <section class="section categories" id="categories">
+
+            <div class="section-title">
+                <span class="sur-titre">FAITES VOTRE CHOIX</span>
+                <h2>Nos catégories</h2>
+                <p>Explorez nos différents univers.</p>
+            </div>
+
+            <div class="categories-grid">
+
+                <button class="categorie active" data-categorie="Tous">
+                    <span>✦</span>
+                    <h3>Tout voir</h3>
+                    <p>Tous nos articles</p>
+                </button>
+
+                <button class="categorie" data-categorie="Électronique">
+                    <span>⌁</span>
+                    <h3>Électronique</h3>
+                    <p>Audio et accessoires</p>
+                </button>
+
+                <button class="categorie" data-categorie="Maison">
+                    <span>⌂</span>
+                    <h3>Maison</h3>
+                    <p>Confort et quotidien</p>
+                </button>
+
+                <button class="categorie" data-categorie="Mode">
+                    <span>◇</span>
+                    <h3>Mode</h3>
+                    <p>Style et élégance</p>
+                </button>
+
+                <button class="categorie" data-categorie="Cuisine">
+                    <span>♨</span>
+                    <h3>Cuisine</h3>
+                    <p>Pratique au quotidien</p>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- PRODUITS -->
+        <section class="section produits" id="produits">
+
+            <div class="section-title">
+                <span class="sur-titre">LA SÉLECTION JP SHOP</span>
+                <h2>Nos produits</h2>
+                <p>Découvrez nos articles disponibles.</p>
+            </div>
+
+            <div class="outils-produits">
+                <input
+                    type="search"
+                    id="barre-recherche"
+                    placeholder="Rechercher un produit..."
+                >
+
+                <select id="tri-produits">
+                    <option value="defaut">Trier : recommandé</option>
+                    <option value="croissant">Prix croissant</option>
+                    <option value="decroissant">Prix décroissant</option>
+                    <option value="nom">Nom : A à Z</option>
+                </select>
+            </div>
+
+            <p id="nombre-resultats"></p>
+
+            <div class="produits-grid" id="liste-produits"></div>
+
+            <div id="aucun-resultat" hidden>
+                <h3>Aucun produit trouvé</h3>
+                <p>Essaie avec un autre nom ou une autre catégorie.</p>
+                <button id="reinitialiser">Voir tous les produits</button>
+            </div>
+
+        </section>
+
+        <!-- PROMOTION -->
+        <section class="promotion">
+            <div>
+                <span class="sur-titre">JP SHOP</span>
+                <h2>Un article vous intéresse ?</h2>
+                <p>
+                    Ajoutez-le au panier et envoyez votre commande
+                    directement sur WhatsApp.
+                </p>
+            </div>
+
+            <a href="#produits" class="btn-blanc">
+                Voir les articles →
+            </a>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact" id="contact">
+
+            <div class="contact-info">
+                <span class="sur-titre">À PROPOS DE JP SHOP</span>
+
+                <h2>
+                    Le choix, la simplicité
+                    et la proximité.
+                </h2>
+
+                <p>
+                    JP Shop vous propose une sélection diversifiée
+                    d'articles électroniques, de maison, de cuisine,
+                    de chaussures et d'accessoires.
+                </p>
+
+                <strong>Votre satisfaction, notre priorité !</strong>
+            </div>
+
+            <div class="contact-card">
+                <span>✉</span>
+                <h3>Une question ?</h3>
+
+                <p>
+                    Besoin d'informations sur un produit ou votre
+                    commande ? Écrivez-nous directement.
+                </p>
+
+                <a
+                    href="https://wa.me/2290158789161"
+                    target="_blank"
+                    rel="noopener"
+                    class="whatsapp-btn"
+                >
+                    Discuter sur WhatsApp ↗
+                </a>
+
+                <small>Vente en gros et en détail</small>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+        <a href="#accueil" class="logo">
+            <span>JP</span> SHOP
+        </a>
+
+        <p>Des articles utiles, un service simple et proche de vous.</p>
+
+        <div class="footer-bottom">
+            <p>© <span id="annee"></span> JP Shop. Tous droits réservés.</p>
+            <a href="#accueil">Retour en haut ↑</a>
+        </div>
+    </footer>
+
+    <!-- PANIER -->
+    <div class="fond-panier" id="fond-panier"></div>
+
+    <aside class="volet-panier" id="volet-panier">
+
+        <div class="panier-header">
+            <div>
+                <span class="sur-titre">VOTRE SÉLECTION</span>
+                <h2>Mon panier</h2>
+            </div>
+
+            <button id="fermer-panier">×</button>
+        </div>
+
+        <div id="liste-panier">
+            <p class="panier-vide">Votre panier est vide.</p>
+        </div>
+
+        <div class="panier-footer">
+            <div class="total">
+                <span>Total estimé</span>
+                <strong id="total-panier">0 FCFA</strong>
+            </div>
+
+            <p>Votre commande sera envoyée sur WhatsApp.</p>
+
+            <button id="btn-valider" class="whatsapp-btn">
+                Commander sur WhatsApp ↗
+            </button>
+        </div>
+
+    </aside>
+
+</body>
+</html>
+

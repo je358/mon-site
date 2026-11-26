@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Montre connectée",
             prix: 7500,
             categorie: "Électronique",
-            image: "images/montre.jpg",
+            image: "b1.jpg",
             emoji: "⌚"
         },
         {
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Sac à dos",
             prix: 3000,
             categorie: "Mode",
-            image: "images/sac.jpg",
+            image: "b2.jpg",
             emoji: "🎒"
         },
         {
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Power bank 30 000 mAh",
             prix: 5500,
             categorie: "Électronique",
-            image: "images/power-bank.jpg",
+            image: "b3.jpg",
             emoji: "🔋"
         },
         {
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Écouteur sans fil",
             prix: 3000,
             categorie: "Électronique",
-            image: "images/ecouteurs.jpg",
+            image: "b4.jpg",
             emoji: "🎧"
         },
         {
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Micro cravate",
             prix: 5500,
             categorie: "Électronique",
-            image: "images/micro.jpg",
+            image: "b5.jpg",
             emoji: "🎙️"
         },
         {
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Casque Soyto T-12",
             prix: 6500,
             categorie: "Électronique",
-            image: "images/casque.jpg",
+            image: "b6.jpg",
             emoji: "🎧"
         },
         {
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Sonnette sans fil",
             prix: 4000,
             categorie: "Maison",
-            image: "images/sonnette.jpg",
+            image: "b7.jpg",
             emoji: "🔔"
         },
         {
@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Gourde thermos",
             prix: 4500,
             categorie: "Maison",
-            image: "images/gourde.jpg",
+            image: "b8.jpg",
             emoji: "🥤"
         },
         {
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Mini climatiseur",
             prix: 6000,
             categorie: "Maison",
-            image: "images/climatiseur.jpg",
+            image: "b9.jpg",
             emoji: "❄️"
         },
         {
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Diffuseur de senteur",
             prix: 5000,
             categorie: "Maison",
-            image: "images/diffuseur.jpg",
+            image: "b10.jpg",
             emoji: "🌿"
         },
         {
@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Parfum",
             prix: 4500,
             categorie: "Mode",
-            image: "images/parfum.jpg",
+            image: "b11.jpg",
             emoji: "🌸"
         },
         {
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nom: "Accessoire de cuisine",
             prix: 3500,
             categorie: "Cuisine",
-            image: "images/cuisine.jpg",
+            image: "b12.jpg",
             emoji: "🍽️"
         }
     ];

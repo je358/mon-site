@@ -291,6 +291,102 @@ document.addEventListener("DOMContentLoaded", () => {
             categorie: "Cuisine",
             image: "b12.jpg",
             emoji: "🍽️"
+        },
+         {
+            id: 13,
+            nom: "Montre connectée",
+            prix: 7500,
+            categorie: "Électronique",
+            image: "b13.jpg",
+            emoji: "⌚"
+        },
+        {
+            id: 14,
+            nom: "Sac à dos",
+            prix: 3000,
+            categorie: "Mode",
+            image: "b14.jpg",
+            emoji: "🎒"
+        },
+        {
+            id: 15,
+            nom: "Power bank 30 000 mAh",
+            prix: 5500,
+            categorie: "Électronique",
+            image: "b15.jpg",
+            emoji: "🔋"
+        },
+        {
+            id: 16,
+            nom: "Écouteur sans fil",
+            prix: 3000,
+            categorie: "Électronique",
+            image: "b4.jpg",
+            emoji: "🎧"
+        },
+        {
+            id: 17,
+            nom: "Micro cravate",
+            prix: 5500,
+            categorie: "Électronique",
+            image: "b16.jpg",
+            emoji: "🎙️"
+        },
+        {
+            id: 18,
+            nom: "Casque Soyto T-12",
+            prix: 6500,
+            categorie: "Électronique",
+            image: "b17.jpg",
+            emoji: "🎧"
+        },
+        {
+            id: 19,
+            nom: "Sonnette sans fil",
+            prix: 4000,
+            categorie: "Maison",
+            image: "b18.jpg",
+            emoji: ""
+        },
+        {
+            id: 20,
+            nom: "Gourde thermos",
+            prix: 4500,
+            categorie: "Maison",
+            image: "b19.jpg",
+            emoji: "🥤"
+        },
+        {
+            id: 21,
+            nom: "Mini climatiseur",
+            prix: 6000,
+            categorie: "Maison",
+            image: "b20.jpg",
+            emoji: ""
+        },
+        {
+            id: 22,
+            nom: "Diffuseur de senteur",
+            prix: 5000,
+            categorie: "Maison",
+            image: "b21.jpg",
+            emoji: "🌿"
+        },
+        {
+            id: 23,
+            nom: "Parfum",
+            prix: 4500,
+            categorie: "Mode",
+            image: "b22.jpg",
+            emoji: "🌸"
+        },
+        {
+            id: 24,
+            nom: "Accessoire de cuisine",
+            prix: 3500,
+            categorie: "Cuisine",
+            image: "b23.jpg",
+            emoji: "🍽️"
         }
     ];
 

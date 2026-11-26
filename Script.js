@@ -192,7 +192,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // NUMÉRO WHATSAPP DE JP SHOP
-    const numeroWhatsApp = "2290158789161";
+    const numeroWhatsApp = "229158789161";
 
     // LISTE DES PRODUITS
     const produits = [

@@ -640,12 +640,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 "\n\nMerci de me confirmer la disponibilité.";
 
             const lien =
-                "https://wa.me/"  +
-              numeroWhatsApp +
-                   ?text= +
-          encodeURIComponent(message);
+    "https://wa.me/" +
+    numeroWhatsApp +
+    "?text=" +
+    encodeURIComponent(message);
 
-            window.open(lien, "_blank");
+window.open(lien, "_blank");
 
         });
 

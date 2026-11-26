@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
             prix: 4000,
             categorie: "Maison",
             image: "b7.jpg",
-            emoji: "🔔"
+            emoji: ""
         },
         {
             id: 8,
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
             prix: 6000,
             categorie: "Maison",
             image: "b9.jpg",
-            emoji: "❄️"
+            emoji: ""
         },
         {
             id: 10,
@@ -639,11 +639,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "\nTotal estimé : " + formaterPrix(total) +
                 "\n\nMerci de me confirmer la disponibilité.";
 
-            const lien =
-    "https://wa.me/" +
-    numeroWhatsApp +
-    "?text=" +
-    encodeURIComponent(message);
+           const lien = "https://wa.me/" + numeroWhatsApp +
+             "?text=" + encodeURIComponent(message);
 
 window.open(lien, "_blank");
 

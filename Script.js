@@ -192,7 +192,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // NUMÉRO WHATSAPP DE JP SHOP
-    const numeroWhatsApp = "229158789161";
+    const numeroWhatsApp = "2290158789161";
 
     // LISTE DES PRODUITS
     const produits = [
@@ -640,10 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "\n\nMerci de me confirmer la disponibilité.";
 
             const lien =
-                "https://wa.me/" +
-                numeroWhatsApp +
-                "?text=" +
-                encodeURIComponent(message);
+                "https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(message)}';
 
             window.open(lien, "_blank");
 

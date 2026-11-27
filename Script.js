@@ -12,12 +12,12 @@
   const checkoutButton = document.getElementById("btn-valider");
   const searchInput = document.getElementById("barre-recherche");
   const noResults = document.getElementById("message-aucun-resultat");
-  const productCards = [...document.querySelectorAll(".carte-produit")];*/
+  const productCards = [...document.querySelectorAll(".carte-produit")];
 
   // Remplace ce numéro par ton numéro WhatsApp au format international sans +.
   const WHATSAPP_NUMBER = "2290158789161";
 
- /* const formatPrice = value => new Intl.NumberFormat("fr-FR").format(value) + " FCFA";
+ const formatPrice = value => new Intl.NumberFormat("fr-FR").format(value) + " FCFA";
 
   function openCart() {
     cartOverlay.classList.add("open");
@@ -178,7 +178,7 @@
       "",
       `Total : ${formatPrice(total)}`,
       "Merci de me confirmer la disponibilité et la livraison."
-    ].join("\n");*/
+    ].join("\n");
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   });
@@ -191,8 +191,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-   /* // NUMÉRO WHATSAPP DE JP SHOP
-    const numeroWhatsApp = "229158789161";*/
+    // NUMÉRO WHATSAPP DE JP SHOP
+    const numeroWhatsApp = "229158789161";
 
     // LISTE DES PRODUITS
     const produits = [
@@ -735,12 +735,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 "\nTotal estimé : " + formaterPrix(total) +
                 "\n\nMerci de me confirmer la disponibilité.";
 
-           /*const lien = "https://wa.me/" + numeroWhatsApp +
+           const lien = "https://wa.me/" + numeroWhatsApp +
              "?text=" + encodeURIComponent(message);
 
 window.open(lien, "_blank");
 
-        });*/
+        });
 
     // MENU MOBILE
     document.getElementById("menuToggle")

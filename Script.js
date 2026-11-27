@@ -12,12 +12,12 @@
   const checkoutButton = document.getElementById("btn-valider");
   const searchInput = document.getElementById("barre-recherche");
   const noResults = document.getElementById("message-aucun-resultat");
-  const productCards = [...document.querySelectorAll(".carte-produit")];
+  const productCards = [...document.querySelectorAll(".carte-produit")];*/
 
   // Remplace ce numéro par ton numéro WhatsApp au format international sans +.
   const WHATSAPP_NUMBER = "2290158789161";
 
-  const formatPrice = value => new Intl.NumberFormat("fr-FR").format(value) + " FCFA";
+ /* const formatPrice = value => new Intl.NumberFormat("fr-FR").format(value) + " FCFA";
 
   function openCart() {
     cartOverlay.classList.add("open");
@@ -178,39 +178,39 @@
       "",
       `Total : ${formatPrice(total)}`,
       "Merci de me confirmer la disponibilité et la livraison."
-    ].join("\n");
+    ].join("\n");*/
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   });
 
   renderCart();
-})();*/
+})();
 
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // NUMÉRO WHATSAPP DE JP SHOP
-    const numeroWhatsApp = "229158789161";
+   /* // NUMÉRO WHATSAPP DE JP SHOP
+    const numeroWhatsApp = "229158789161";*/
 
     // LISTE DES PRODUITS
     const produits = [
         {
             id: 1,
-            nom: "Montre connectée",
-            prix: 7500,
-            categorie: "Électronique",
+            nom: "gourde",
+            prix: 1500,
+            categorie: "mode",
             image: "b1.jpg",
-            emoji: "⌚"
+            emoji: ""
         },
         {
             id: 2,
-            nom: "Sac à dos",
-            prix: 3000,
+            nom: "ensemble coffret",
+            prix: 5000,
             categorie: "Mode",
             image: "b2.jpg",
-            emoji: "🎒"
+            emoji: ""
         },
         {
             id: 3,
@@ -366,27 +366,27 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             id: 22,
-            nom: "Diffuseur de senteur",
-            prix: 5000,
-            categorie: "Maison",
+            nom: "écouteurs bluetooth connecté",
+            prix: 2100,
+            categorie: "électronique",
             image: "b21.jpg",
             emoji: "🌿"
         },
         {
             id: 23,
-            nom: "Parfum",
-            prix: 4500,
-            categorie: "Mode",
+            nom: "ensemble couteau",
+            prix: 3000,
+            categorie: "cuisine",
             image: "b22.jpg",
-            emoji: "🌸"
+            emoji: ""
         },
         {
             id: 24,
-            nom: "Accessoire de cuisine",
-            prix: 3500,
-            categorie: "Cuisine",
+            nom: "écouteurs bluetooth",
+            prix: 2000,
+            categorie: "électronique",
             image: "b23.jpg",
-            emoji: "🍽️"
+            emoji: ""
         }
     ];
 
@@ -735,12 +735,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 "\nTotal estimé : " + formaterPrix(total) +
                 "\n\nMerci de me confirmer la disponibilité.";
 
-           const lien = "https://wa.me/" + numeroWhatsApp +
+           /*const lien = "https://wa.me/" + numeroWhatsApp +
              "?text=" + encodeURIComponent(message);
 
 window.open(lien, "_blank");
 
-        });
+        });*/
 
     // MENU MOBILE
     document.getElementById("menuToggle")

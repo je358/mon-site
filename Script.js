@@ -387,6 +387,78 @@ document.addEventListener("DOMContentLoaded", () => {
             categorie: "électronique",
             image: "b23.jpg",
             emoji: ""
+        },
+         {
+            id: 25,
+            nom: "gourde",
+            prix: 1500,
+            categorie: "mode",
+            image: "i1.jpg",
+            emoji: ""
+        },
+        {
+            id: 26,
+            nom: "ensemble coffret",
+            prix: 5000,
+            categorie: "Mode",
+            image: "i2.jpg",
+            emoji: ""
+        },
+        {
+            id: 27,
+            nom: "Power bank 30 000 mAh",
+            prix: 5500,
+            categorie: "Électronique",
+            image: "i3.jpg",
+            emoji: "🔋"
+        },
+        {
+            id: 28,
+            nom: "Écouteur sans fil",
+            prix: 3000,
+            categorie: "Électronique",
+            image: "i4.jpg",
+            emoji: "🎧"
+        },
+        {
+            id: 29,
+            nom: "Micro cravate",
+            prix: 5500,
+            categorie: "Électronique",
+            image: "i5.jpg",
+            emoji: "🎙️"
+        },
+        {
+            id: 30,
+            nom: "Casque Soyto T-12",
+            prix: 6500,
+            categorie: "Électronique",
+            image: "i6.jpg",
+            emoji: "🎧"
+        },
+        {
+            id: 31,
+            nom: "Sonnette sans fil",
+            prix: 4000,
+            categorie: "Maison",
+            image: "i7.jpg",
+            emoji: ""
+        },
+        {
+            id: 32,
+            nom: "Gourde thermos",
+            prix: 4500,
+            categorie: "Maison",
+            image: "i8.jpg",
+            emoji: "🥤"
+        },
+        {
+            id: 33,
+            nom: "Mini climatiseur",
+            prix: 6000,
+            categorie: "Maison",
+            image: "i9.jpg",
+            emoji: ""
         }
     ];
 
